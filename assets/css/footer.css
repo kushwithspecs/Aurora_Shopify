@@ -1,0 +1,187 @@
+/* ─── Footer ─── */
+.footer {
+  position: relative;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border-light);
+  padding: 64px var(--page-padding) 200px;
+  overflow: hidden;
+}
+.footer__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__logo-text {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  line-height: 1em;
+}
+.footer__tagline {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 320px;
+  line-height: 1.5em;
+}
+
+.footer__col h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  letter-spacing: var(--ls-body);
+}
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__col a {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  position: relative;
+  display: inline-block;
+  transition: color var(--t-fast);
+}
+.footer__col a:hover { color: var(--color-text-primary); }
+
+/* Newsletter */
+.footer__newsletter {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+  max-width: 480px;
+}
+.footer__newsletter-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.footer__newsletter-row {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+  align-items: center;
+}
+.footer__newsletter-row input {
+  flex: 1;
+  height: 38px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+.footer__newsletter-row input::placeholder { color: var(--color-text-muted); }
+.footer__newsletter-row button {
+  background: var(--color-text-primary);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--ls-body);
+  padding: 10px 24px;
+  border-radius: 999px;
+  transition: opacity var(--t-fast);
+}
+.footer__newsletter-row button:hover { opacity: 0.85; }
+
+/* Bottom bar */
+.footer__bottom {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.footer__copy {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+.footer__socials {
+  display: flex;
+  gap: 16px;
+}
+.footer__socials a {
+  color: var(--color-text-secondary);
+  transition: color var(--t-fast);
+}
+.footer__socials a:hover { color: var(--color-text-primary); }
+
+/* Giant ghost brand marquee */
+.footer__marquee {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+.footer__marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: footer-marquee 30s linear infinite;
+  will-change: transform;
+}
+.footer__marquee-track span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(140px, 20vw, 280px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-border);
+  text-stroke: 1px var(--color-border);
+  padding-right: 60px;
+}
+
+@keyframes footer-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .footer { padding-bottom: 140px; }
+  .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer__marquee { bottom: -30px; }
+  .footer__bottom { flex-direction: column; align-items: flex-start; }
+}

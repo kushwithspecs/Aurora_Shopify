@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Collection — Aurore Jewellery</title>
+  <meta name="description" content="Explore the full Aurore collection — rings, necklaces, earrings, and the Lumière flagship pieces." />
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/landing.css" />
+  <link rel="stylesheet" href="assets/css/catalogue.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar" aria-label="Primary">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Aurore home">
+        <svg class="navbar__logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" stroke="#1C1C1C" stroke-width="1.2"/>
+          <path d="M8 20 L16 6 L24 20 Z" stroke="#1C1C1C" stroke-width="1.2" fill="none"/>
+          <line x1="11" y1="20" x2="21" y2="20" stroke="#1C1C1C" stroke-width="1.2"/>
+        </svg>
+        <span class="navbar__logo-text">Aurore</span>
+      </a>
+
+      <div class="navbar__right">
+        <div class="navbar__links">
+          <a href="catalogue.html?filter=rings"     class="navbar__link">Rings</a>
+          <a href="catalogue.html?filter=necklaces" class="navbar__link">Necklaces</a>
+          <a href="catalogue.html?filter=earrings"  class="navbar__link">Earrings</a>
+          <a href="catalogue.html?filter=lumiere"   class="navbar__link">Lumière</a>
+        </div>
+        <div class="navbar__icons">
+          <button class="navbar__icon" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 256 256" aria-hidden="true">
+              <path fill="currentColor" d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"/>
+            </svg>
+          </button>
+          <button class="navbar__icon" aria-label="Bag">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="navbar__count">0</span>
+          </button>
+          <button class="navbar__burger" id="navBurger" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <line x1="3" y1="7" x2="21" y2="7"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="17" x2="21" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── MOBILE MENU OVERLAY ─── -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <div class="mobile-menu__header">
+      <span class="navbar__logo-text">Aurore</span>
+      <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-menu__links">
+      <a href="catalogue.html?filter=rings">Rings</a>
+      <a href="catalogue.html?filter=necklaces">Necklaces</a>
+      <a href="catalogue.html?filter=earrings">Earrings</a>
+      <a href="catalogue.html?filter=lumiere">Lumière</a>
+      <a href="catalogue.html">All Collections</a>
+    </div>
+  </div>
+
+  <!-- ─── PAGE HERO BANNER ─── -->
+  <section class="cat-hero">
+    <img class="cat-hero__img" src="assets/images/elara/lcAX43n7xsowQvdFpnSiXrcwbjw.jpg" alt="" />
+    <div class="cat-hero__overlay"></div>
+    <div class="cat-hero__content">
+      <span class="cat-hero__label">Aurore — The House</span>
+      <h1>The <em>Collection.</em></h1>
+      <p>Discover every piece, crafted to be remembered.</p>
+    </div>
+  </section>
+
+  <!-- ─── STICKY CONTROLS BAR ─── -->
+  <div class="cat-controls">
+    <div class="cat-controls__inner">
+      <div class="cat-filters" role="group" aria-label="Filter by category">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="rings">Rings</button>
+        <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+        <button class="filter-btn" data-filter="earrings">Earrings</button>
+        <button class="filter-btn" data-filter="lumiere">Lumière</button>
+      </div>
+
+      <div class="cat-controls__right">
+        <label class="cat-search" aria-label="Search">
+          <svg class="cat-search__icon" viewBox="0 0 256 256" aria-hidden="true">
+            <path fill="currentColor" d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"/>
+          </svg>
+          <input type="text" id="catalogueSearch" placeholder="Search pieces…" autocomplete="off" aria-label="Search pieces" />
+        </label>
+        <select class="cat-sort" id="catalogueSort" aria-label="Sort by">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="newest">Newest</option>
+        </select>
+        <div class="cat-view-toggle" role="group" aria-label="View density">
+          <button class="view-btn is-active" data-view="3" aria-label="3 column grid">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+              <rect x="0" y="0" width="5" height="5"/><rect x="6.5" y="0" width="5" height="5"/><rect x="13" y="0" width="5" height="5"/>
+              <rect x="0" y="6.5" width="5" height="5"/><rect x="6.5" y="6.5" width="5" height="5"/><rect x="13" y="6.5" width="5" height="5"/>
+              <rect x="0" y="13" width="5" height="5"/><rect x="6.5" y="13" width="5" height="5"/><rect x="13" y="13" width="5" height="5"/>
+            </svg>
+          </button>
+          <button class="view-btn" data-view="2" aria-label="2 column grid">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+              <rect x="0" y="0" width="8" height="8"/><rect x="10" y="0" width="8" height="8"/>
+              <rect x="0" y="10" width="8" height="8"/><rect x="10" y="10" width="8" height="8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── RESULTS META ─── -->
+  <div class="cat-meta">
+    <p class="cat-meta__count"><span id="productCount">24</span> pieces</p>
+  </div>
+
+  <!-- ─── PRODUCT GRID ─── -->
+  <div class="cat-grid-wrap">
+    <div class="cat-grid" id="catalogueGrid">
+
+      <!-- ═══ RINGS (8) ═══ -->
+      <a href="#" class="product-card reveal" data-category="rings" data-price="3800" data-name="Golden Leaf Diamond Ring" data-date="2025-01-15">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/TS8Ehpq4e8pNLRTfmTMt4sLzPvg.png" alt="Golden Leaf Diamond Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/WyABa6qFtIkI5y3U7ektzji9gI.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Golden Leaf Diamond Ring</p>
+          <p class="product-card__price">$3,800.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="3900" data-name="Modern Geometric Diamond Eternity Ring" data-date="2025-02-08">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/0usdj3k3YH9KXwTWpE8ldzZKCI.png" alt="Modern Geometric Diamond Eternity Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/I7dU3UccVEa0K3V3h24nQ3Fd7Y.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Modern Geometric Diamond Eternity Ring</p>
+          <p class="product-card__price">$3,900.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="3200" data-name="Golden Panther Statement Ring" data-date="2024-11-20">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/LjROeZSqSAldj2aoycNbGdyJ00.png" alt="Golden Panther Statement Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/bLhtWdhj97cR67d1ow74MpMyvQ.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Golden Panther Statement Ring</p>
+          <p class="product-card__price">$3,200.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="2500" data-name="Crackle Diamond Ring" data-date="2025-03-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/fXi53IjuKlDSz5JuTpyWLgvCw.png" alt="Crackle Diamond Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/ofDkaTgoqSudyubXxNOXVl9Akkk.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Trending</span>
+          <p class="product-card__name">Crackle Diamond Ring</p>
+          <p class="product-card__price">$2,500.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="1250" data-name="Crimson Circle Ruby Eternity Band" data-date="2024-10-12">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/vRW7Nxc58yzawEgqAXS3OTOFw.png" alt="Crimson Circle Ruby Eternity Band" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/5Dqpi7b7xVrE3EZWnGAvZJ0SNM.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Crimson Circle Ruby Eternity Band</p>
+          <p class="product-card__price">$1,250.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="1520" data-name="Purple Pearl Engraving" data-date="2025-04-05">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/mZl0ylevZwm4NOnvYkjNI5RCP0.png" alt="Purple Pearl Engraving" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/h8n9Ai5KQU1RVWpC7Xh4g2sk1uA.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">New</span>
+          <p class="product-card__name">Purple Pearl Engraving</p>
+          <p class="product-card__price">$1,520.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="2200" data-name="Radiant Ruby Baguette Eternity Ring" data-date="2024-12-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/I7dU3UccVEa0K3V3h24nQ3Fd7Y.png" alt="Radiant Ruby Baguette Eternity Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/0usdj3k3YH9KXwTWpE8ldzZKCI.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Radiant Ruby Baguette Eternity Ring</p>
+          <p class="product-card__price">$2,200.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="rings" data-price="1850" data-name="Two-Tone Diamond Eternity Band" data-date="2024-09-15">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/LPVNSPlYKk46vos9o2srjnpLtY.png" alt="Two-Tone Diamond Eternity Band" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/5Dqpi7b7xVrE3EZWnGAvZJ0SNM.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Two-Tone Diamond Eternity Band</p>
+          <p class="product-card__price">$1,850.00</p>
+        </div>
+      </a>
+
+      <!-- ═══ NECKLACES (6) ═══ -->
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="4200" data-name="Fiorever Ruby Diamond Necklace" data-date="2025-01-22">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/Qy8RG50lrqtrEgtPaDaADrBAU.png" alt="Fiorever Ruby Diamond Necklace" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/rsI1Q0OWMdIO8D2cMNKTAtb7Q.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Fiorever Ruby Diamond Necklace</p>
+          <p class="product-card__price">$4,200.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="2800" data-name="Gemstone Fan Statement Necklace" data-date="2025-02-18">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/BfRKgfX04LoXljntlZYbW41khW8.png" alt="Gemstone Fan Statement Necklace" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/dcOH4hnmmZMcl3t7tQtbiwC6c.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Trending</span>
+          <p class="product-card__name">Gemstone Fan Statement Necklace</p>
+          <p class="product-card__price">$2,800.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="1900" data-name="Golden Cascade Layered Necklace" data-date="2025-04-12">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/K6I0MC7E40iP7AnSH8tTjigcsE.png" alt="Golden Cascade Layered Necklace" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/jUkDC1riEdQJvB8zxGpovFvA82s.jpg" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">New</span>
+          <p class="product-card__name">Golden Cascade Layered Necklace</p>
+          <p class="product-card__price">$1,900.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="3100" data-name="Pearl &amp; Diamond Choker" data-date="2024-11-08">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/jUkDC1riEdQJvB8zxGpovFvA82s.jpg" alt="Pearl and Diamond Choker" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/K6I0MC7E40iP7AnSH8tTjigcsE.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Pearl &amp; Diamond Choker</p>
+          <p class="product-card__price">$3,100.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="2400" data-name="Serpent Chain Pendant" data-date="2024-10-25">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/rsI1Q0OWMdIO8D2cMNKTAtb7Q.png" alt="Serpent Chain Pendant" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/Qy8RG50lrqtrEgtPaDaADrBAU.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Serpent Chain Pendant</p>
+          <p class="product-card__price">$2,400.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="necklaces" data-price="1650" data-name="Lunar Arc Gold Necklace" data-date="2024-09-30">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/dcOH4hnmmZMcl3t7tQtbiwC6c.png" alt="Lunar Arc Gold Necklace" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/BfRKgfX04LoXljntlZYbW41khW8.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Lunar Arc Gold Necklace</p>
+          <p class="product-card__price">$1,650.00</p>
+        </div>
+      </a>
+
+      <!-- ═══ EARRINGS (6) ═══ -->
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="2200" data-name="Diamond Stud Pavé Earrings" data-date="2025-01-30">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/lq4LO5vXWl0yPqiK2jG5EV5I7A.jpg" alt="Diamond Stud Pavé Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/FpJkmcO1nccrgnuOzf2HY1gd9kc.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Diamond Stud Pavé Earrings</p>
+          <p class="product-card__price">$2,200.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="3500" data-name="Ruby Drop Chandelier Earrings" data-date="2024-12-15">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/FpJkmcO1nccrgnuOzf2HY1gd9kc.png" alt="Ruby Drop Chandelier Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/lq4LO5vXWl0yPqiK2jG5EV5I7A.jpg" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Ruby Drop Chandelier Earrings</p>
+          <p class="product-card__price">$3,500.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="1400" data-name="Gold Leaf Hoop Earrings" data-date="2025-04-20">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/mMK3STq0CXQnA3Fv43Y4SbMoPI.png" alt="Gold Leaf Hoop Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/lq4LO5vXWl0yPqiK2jG5EV5I7A.jpg" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">New</span>
+          <p class="product-card__name">Gold Leaf Hoop Earrings</p>
+          <p class="product-card__price">$1,400.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="980" data-name="Twisted Cable Stud Earrings" data-date="2024-08-22">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/lq4LO5vXWl0yPqiK2jG5EV5I7A.jpg" alt="Twisted Cable Stud Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/mMK3STq0CXQnA3Fv43Y4SbMoPI.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Twisted Cable Stud Earrings</p>
+          <p class="product-card__price">$980.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="1750" data-name="Pearl Teardrop Earrings" data-date="2025-02-28">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/FpJkmcO1nccrgnuOzf2HY1gd9kc.png" alt="Pearl Teardrop Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/mMK3STq0CXQnA3Fv43Y4SbMoPI.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Trending</span>
+          <p class="product-card__name">Pearl Teardrop Earrings</p>
+          <p class="product-card__price">$1,750.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="earrings" data-price="1600" data-name="Geometric Moissanite Drops" data-date="2024-11-25">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/mMK3STq0CXQnA3Fv43Y4SbMoPI.png" alt="Geometric Moissanite Drops" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/FpJkmcO1nccrgnuOzf2HY1gd9kc.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Geometric Moissanite Drops</p>
+          <p class="product-card__price">$1,600.00</p>
+        </div>
+      </a>
+
+      <!-- ═══ LUMIÈRE COLLECTION (4) ═══ -->
+      <a href="#" class="product-card reveal" data-category="lumiere" data-price="6800" data-name="Lumière Solitaire Diamond Ring" data-date="2025-05-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/h8n9Ai5KQU1RVWpC7Xh4g2sk1uA.png" alt="Lumière Solitaire Diamond Ring" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/TS8Ehpq4e8pNLRTfmTMt4sLzPvg.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Lumière Solitaire Diamond Ring</p>
+          <p class="product-card__price">$6,800.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="lumiere" data-price="5400" data-name="Lumière Constellation Necklace" data-date="2025-05-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/Qy8RG50lrqtrEgtPaDaADrBAU.png" alt="Lumière Constellation Necklace" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/BfRKgfX04LoXljntlZYbW41khW8.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Lumière Constellation Necklace</p>
+          <p class="product-card__price">$5,400.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="lumiere" data-price="4900" data-name="Lumière Eclipse Bangle" data-date="2025-05-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/hh7ullu7iIpEjwxEFimYrKiSzgU.png" alt="Lumière Eclipse Bangle" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/mZl0ylevZwm4NOnvYkjNI5RCP0.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Lumière Eclipse Bangle</p>
+          <p class="product-card__price">$4,900.00</p>
+        </div>
+      </a>
+
+      <a href="#" class="product-card reveal" data-category="lumiere" data-price="3800" data-name="Lumière Crescent Earrings" data-date="2025-05-01">
+        <div class="product-card__img-wrap">
+          <img class="img-primary" src="assets/images/elara/lq4LO5vXWl0yPqiK2jG5EV5I7A.jpg" alt="Lumière Crescent Earrings" loading="lazy" />
+          <img class="img-secondary" src="assets/images/elara/FpJkmcO1nccrgnuOzf2HY1gd9kc.png" alt="" loading="lazy" />
+          <button class="product-card__add">Add to Bag</button>
+        </div>
+        <div class="product-card__info">
+          <span class="product-card__badge">Exclusive</span>
+          <p class="product-card__name">Lumière Crescent Earrings</p>
+          <p class="product-card__price">$3,800.00</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ─── EMPTY STATE ─── -->
+    <div class="cat-empty" id="catEmpty">
+      <span class="cat-empty__symbol">✦</span>
+      <h3>No pieces found.</h3>
+      <p>Try adjusting your filters or search term.</p>
+      <button class="cat-empty__reset" id="resetFilters">Clear all filters</button>
+    </div>
+
+    <!-- ─── LOAD MORE ─── -->
+    <div class="cat-load-more" id="loadMoreWrap">
+      <button class="btn-outline" id="loadMoreBtn">Load More Pieces</button>
+      <p><span id="shownCount">9</span> of <span id="totalCount">24</span> pieces</p>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" stroke="#1C1C1C" stroke-width="1.2"/>
+            <path d="M8 20 L16 6 L24 20 Z" stroke="#1C1C1C" stroke-width="1.2" fill="none"/>
+            <line x1="11" y1="20" x2="21" y2="20" stroke="#1C1C1C" stroke-width="1.2"/>
+          </svg>
+          <span class="footer__logo-text">Aurore</span>
+        </a>
+        <p class="footer__tagline">Where Luxury Finds Its True Form. Handcrafted jewellery, since 2019.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Stories</a></li>
+          <li><a href="#">Salons</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="catalogue.html?filter=rings">Rings</a></li>
+          <li><a href="catalogue.html?filter=necklaces">Necklaces</a></li>
+          <li><a href="catalogue.html?filter=earrings">Earrings</a></li>
+          <li><a href="catalogue.html?filter=lumiere">Lumière</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Care guide</a></li>
+          <li><a href="#">Privacy &amp; Terms</a></li>
+        </ul>
+      </div>
+
+      <form class="footer__newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
+        <span class="footer__newsletter-label">Join the Aurore Circle.</span>
+        <div class="footer__newsletter-row">
+          <input type="email" placeholder="Your email address" required aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Aurore Jewellery. All rights reserved.</span>
+      <div class="footer__socials" aria-label="Social links">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M10 21c-.5-1 .5-3 1-6 .5-2.5 0-4-1-4-1.5 0-2.5 1.5-2.5 3.5 0 1 .5 1.5 1 1.5"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4c1 2 3 3 5 3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer__marquee" data-marquee aria-hidden="true">
+      <div class="footer__marquee-track">
+        <span>AURORE — AURORE — AURORE —</span>
+        <span>AURORE — AURORE — AURORE —</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="assets/js/navbar.js" defer></script>
+  <script src="assets/js/scroll-reveal.js" defer></script>
+  <script src="assets/js/marquee.js" defer></script>
+  <script src="assets/js/catalogue.js" defer></script>
+</body>
+</html>
