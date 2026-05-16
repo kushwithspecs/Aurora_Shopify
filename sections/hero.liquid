@@ -1,0 +1,62 @@
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero__sticky">
+    <!-- Image stack -->
+    <div class="hero__stack" id="heroStack">
+      <div class="hero__stack-img"><img src="{{ 'hero-1.png' | asset_url }}" alt="Editorial jewellery shot" /></div>
+      <div class="hero__stack-img"><img src="{{ 'hero-2.png' | asset_url }}" alt="" /></div>
+      <div class="hero__stack-img"><img src="{{ 'hero-3.jpg' | asset_url }}" alt="" /></div>
+      <div class="hero__stack-img"><img src="{{ 'hero-4.jpg' | asset_url }}" alt="" /></div>
+      <div class="hero__stack-img"><img src="{{ 'hero-5.jpg' | asset_url }}" alt="" /></div>
+    </div>
+
+    <!-- Simple hero text under the stack -->
+    <div class="hero__headline">
+      <div class="hero__headline-inner">
+        <h1>{{ section.settings.headline }}</h1>
+        <p class="hero__sub-text">{{ section.settings.subheading }}</p>
+      </div>
+    </div>
+
+    <div class="hero__cta-wrap">
+      <a href="{{ section.settings.cta_link }}" class="link-underline">{{ section.settings.cta_text }} <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Designed to be desired."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Aurore jewellery for the modern woman — crafted to be remembered."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Browse the collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary color",
+        "default": "#1C1C1C"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary text color",
+        "default": "#666666"
+      }
+    ]
+  }
+]

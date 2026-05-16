@@ -1,0 +1,81 @@
+<!-- ─── CATEGORY CARDS ─── -->
+<section class="categories">
+  <a href="{{ section.settings.card_1_link }}" class="category-card reveal">
+    <img src="{{ section.settings.card_1_image | img_url: '600x' }}" alt="{{ section.settings.card_1_title }}" loading="lazy" />
+    <div class="category-card__overlay"></div>
+    <div class="category-card__text">
+      <h2>{{ section.settings.card_1_title }}</h2>
+      <p>{{ section.settings.card_1_description }}</p>
+      <a href="{{ section.settings.card_1_link }}" class="link-underline is-white">Browse the collection <span class="arrow">↗</span></a>
+    </div>
+  </a>
+  
+  <a href="{{ section.settings.card_2_link }}" class="category-card reveal delay-1">
+    <img src="{{ section.settings.card_2_image | img_url: '600x' }}" alt="{{ section.settings.card_2_title }}" loading="lazy" />
+    <div class="category-card__overlay"></div>
+    <div class="category-card__text">
+      <h2>{{ section.settings.card_2_title }}</h2>
+      <p>{{ section.settings.card_2_description }}</p>
+      <a href="{{ section.settings.card_2_link }}" class="link-underline is-white">Browse the collection <span class="arrow">↗</span></a>
+    </div>
+  </a>
+</section>
+
+{% schema %}
+{
+  "name": "Category Cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 Title",
+      "default": "The Rings."
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Card 1 Description",
+      "default": "Crafted to add quiet sophistication to any look — for every day, and every occasion."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 Image"
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Card 1 Link",
+      "default": "/collections/rings"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 Title",
+      "default": "The Necklaces."
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Card 2 Description",
+      "default": "Heirlooms designed to follow you through every chapter — and the next."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 Image"
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Card 2 Link",
+      "default": "/collections/necklaces"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Cards"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "headline": "Designed to be desired.",
+        "subheading": "Aurore jewellery for the modern woman — crafted to be remembered.",
+        "cta_text": "Browse the collection",
+        "cta_link": "/collections/all"
+      }
+    },
+    "marquee": {
+      "type": "marquee"
+    },
+    "lumiere": {
+      "type": "lumiere"
+    },
+    "circle": {
+      "type": "circle"
+    },
+    "categories": {
+      "type": "categories"
+    },
+    "trending": {
+      "type": "trending"
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "lumiere",
+    "circle",
+    "categories",
+    "trending"
+  ]
+}

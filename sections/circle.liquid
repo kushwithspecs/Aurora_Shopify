@@ -1,0 +1,60 @@
+<!-- ─── AURORE CIRCLE (Membership) ─── -->
+<section class="circle">
+  <img class="circle__bg" src="{{ section.settings.background_image | img_url: '1200x' }}" alt="" loading="lazy" />
+  <div class="circle__overlay"></div>
+  <div class="circle__content">
+    <span class="circle__label reveal">{{ section.settings.label }}</span>
+    <h3 class="reveal delay-1">{{ section.settings.heading }}</h3>
+    <p class="reveal delay-2">{{ section.settings.description }}</p>
+    <div class="reveal delay-3">
+      <a href="{{ section.settings.cta_link }}" class="link-underline is-white">{{ section.settings.cta_text }} <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Aurore Circle",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Membership — By Invitation"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Aurore Circle. The Pinnacle of Luxury."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "An invitation-only membership for collectors of beauty. Private previews, bespoke commissions, and the first look at every new collection."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Discover the Circle"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aurore Circle"
+    }
+  ]
+}
+{% endschema %}

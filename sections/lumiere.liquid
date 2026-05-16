@@ -1,0 +1,76 @@
+<!-- ─── LUMIÈRE COLLECTION FEATURE ─── -->
+<section class="lumiere section">
+  <div class="container">
+    <div class="lumiere__inner">
+      <div class="lumiere__text reveal from-left">
+        <span class="lumiere__year">{{ section.settings.year }}</span>
+        <h2>{{ section.settings.heading }}</h2>
+        <p>{{ section.settings.description }}</p>
+        <a href="{{ section.settings.cta_link }}" class="link-underline" style="margin-top: 8px;">{{ section.settings.cta_text }} <span class="arrow">↗</span></a>
+      </div>
+      <div class="lumiere__images reveal from-right">
+        <img src="{{ section.settings.image_1 | img_url: '500x' }}" alt="Lumière model shot" loading="lazy" />
+        <img src="{{ section.settings.image_2 | img_url: '500x' }}" alt="Lumière product close-up" loading="lazy" />
+        <img src="{{ section.settings.image_3 | img_url: '500x' }}" alt="Lumière piece 3" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lumière Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "year",
+      "label": "Year",
+      "default": "Lumière — 2025"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A Symphony of Golden Light."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Every piece in the Lumière Collection is a celebration of timeless artistry — blending exquisite materials with modern sophistication. Worn close, kept forever."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Browse the collection"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/collections/lumiere"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lumière Collection"
+    }
+  ]
+}
+{% endschema %}

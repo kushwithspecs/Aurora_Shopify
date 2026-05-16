@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  {% if page_description %}
+    <meta name="description" content="{{ page_description }}">
+  {% endif %}
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {{ 'animations.css' | asset_url | stylesheet_tag }}
+  {{ 'navbar.css' | asset_url | stylesheet_tag }}
+  {{ 'landing.css' | asset_url | stylesheet_tag }}
+  {{ 'footer.css' | asset_url | stylesheet_tag }}
+  {{ 'catalogue.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% section 'navbar' %}
+  
+  <main>
+    {{ content_for_layout }}
+  </main>
+  
+  {% section 'footer' %}
+
+  {{ 'navbar.js' | asset_url | script_tag }}
+  {{ 'hero.js' | asset_url | script_tag }}
+  {{ 'marquee.js' | asset_url | script_tag }}
+  {{ 'scroll-reveal.js' | asset_url | script_tag }}
+  {{ 'catalogue.js' | asset_url | script_tag }}
+</body>
+</html>
